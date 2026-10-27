@@ -1,0 +1,33 @@
+# Limine packages for Fedora
+
+Independent RPM packaging for [kammer/limine](https://copr.fedorainfracloud.org/coprs/kammer/limine/), targeting Fedora 44 x86_64. Sources live here rather than in omadora-pkg.
+
+## Packages
+
+- `limine`: upstream 12.9.4 firmware binaries, with the host tool compiled on Fedora. Release 2 sorts above Terra's release 1. No installation script deploys firmware or changes UEFI entries.
+- `limine-entry-tool`: upstream 1.40.0 entry management and EFI deployment commands. Gradle and GraalVM downloads are pinned and checked; binary builds require network access for Maven dependencies.
+- `limine-snapper-sync`: upstream 1.32.1 snapshot/restore integration, imported from kamm3r/omadora-pkg with its checksum manifest and build history. Fedora wrappers and native binaries use upstream's `/usr/lib/limine` paths.
+- `limine-dracut`: Fedora dracut compatibility commands and kernel-install plugins extracted from Omadora. This is our package name; it is not Arch's mkinitcpio hook package.
+
+Omadora-specific boot-menu defaults, branding, hardware quirks, and Snapper/dracut policy remain in Omadora. The generic integration pins kernel-install to Fedora's `/boot` layout and delegates nonmatching layouts to Fedora's dracut plugin.
+
+## Build
+
+```bash
+make -f .copr/Makefile srpm spec=packages/limine/limine.spec outdir=/tmp/limine-srpm
+rpmbuild --rebuild /tmp/limine-srpm/*.src.rpm
+```
+
+Other recipes use the same `packages/<name>/<name>.spec` convention. The dracut source archive is assembled from the checked-in `helpers/` directory; upstream archives use `sources.sha256`. No source archive is downloaded without checksum validation.
+
+## Existing Omadora installations
+
+Do not switch all packages blindly: existing source-installed `/usr/local/bin/limine-*` commands shadow RPM commands, and unowned `/usr/lib/limine` files may be replaced by RPM payloads. Back up those files and the existing kernel-install configuration before migration. Inventory actual files with `rpm -qf` and compare packaged contents; do not remove a whole directory that might contain other tools.
+
+The existing `/etc/kernel/install.d/96-limine.install` also overrides the packaged `/usr/lib/kernel/install.d/96-limine.install`; retire the old override explicitly after comparison. Review `.rpmnew` files for `/etc/kernel/install.conf` and `/etc/kernel/install.d/50-dracut.install`. Configuration uses `%config(noreplace)`.
+
+Installing these packages does not migrate `/usr/local` files, enable the Snapper service, regenerate initramfs images, or deploy EFI binaries. Those are explicit migration steps after package and configuration review. Keep your current working bootloader until validation completes.
+
+## Source provenance
+
+The initial Snapper recipe is from kamm3r/omadora-pkg. Fedora helper scripts are from kamm3r/omadora (`install/fedora/`), under the included MIT license, with absolute entry-tool paths updated to `/usr/bin` for RPM installation. Upstream projects retain their own licenses.
