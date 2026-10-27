@@ -30,4 +30,4 @@ Installing these packages does not migrate `/usr/local` files, enable the Snappe
 
 ## Source provenance
 
-The initial Snapper recipe is from kamm3r/omadora-pkg. Fedora helper scripts are from kamm3r/omadora (`install/fedora/`), under the included MIT license, with absolute entry-tool paths updated to `/usr/bin` for RPM installation. Upstream projects retain their own licenses.
+The initial Snapper recipe is from kamm3r/omadora-pkg at `e53038407a3df63ff53ad9429eb5885ab9542e49`. Fedora helper scripts are from kamm3r/omadora (`install/fedora/`) at `becc224a03f1b974aeee61b05e4d34c8cfb21f57`, under the included MIT license, with absolute entry-tool paths updated to `/usr/bin` for RPM installation. Upstream projects retain their own licenses.
