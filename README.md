@@ -4,7 +4,7 @@ Independent RPM packaging for [kammer/limine](https://copr.fedorainfracloud.org/
 
 ## Packages
 
-- `limine`: upstream 12.9.4 firmware binaries, with the host tool compiled on Fedora. Release 2 sorts above Terra's release 1. No installation script deploys firmware or changes UEFI entries.
+- `limine`: upstream 12.9.6 firmware binaries, with the host tool compiled on Fedora. Version 12.9.6 sorts above Terra's 12.9.4 package. No installation script deploys firmware or changes UEFI entries.
 - `limine-entry-tool`: upstream 1.40.0 entry management and EFI deployment commands. Gradle and GraalVM downloads are pinned and checked; binary builds require network access for Maven dependencies.
 - `limine-snapper-sync`: upstream 1.32.1 snapshot/restore integration, imported from kamm3r/omadora-pkg with its checksum manifest and build history. Fedora wrappers and native binaries use upstream's `/usr/lib/limine` paths.
 - `limine-dracut`: Fedora dracut compatibility commands and kernel-install plugins extracted from Omadora. This is our package name; it is not Arch's mkinitcpio hook package.
@@ -31,3 +31,5 @@ Installing these packages does not migrate `/usr/local` files, enable the Snappe
 ## Source provenance
 
 The initial Snapper recipe is from kamm3r/omadora-pkg at `e53038407a3df63ff53ad9429eb5885ab9542e49`. Fedora helper scripts are from kamm3r/omadora (`install/fedora/`) at `becc224a03f1b974aeee61b05e4d34c8cfb21f57`, under the included MIT license, with absolute entry-tool paths updated to `/usr/bin` for RPM installation. Upstream projects retain their own licenses.
+
+The October 28 bootloader update passed local RPM build and version checks. COPR build [11220306](https://copr.fedorainfracloud.org/coprs/build/11220306) has a builder success marker but is awaiting final COPR publication status. Companion packages remain unchanged.
