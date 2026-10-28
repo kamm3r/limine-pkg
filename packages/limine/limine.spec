@@ -1,6 +1,6 @@
 Name:           limine
-Version:        12.9.4
-Release:        2%{?dist}
+Version:        12.9.6
+Release:        1%{?dist}
 Summary:        Portable multiprotocol bootloader
 License:        BSD-2-Clause
 URL:            https://github.com/Limine-Bootloader/Limine
