@@ -7,7 +7,7 @@ Independent RPM packaging for [kammer/limine](https://copr.fedorainfracloud.org/
 - `limine`: upstream 12.9.6 firmware binaries, with the host tool compiled on Fedora. Version 12.9.6 sorts above Terra's 12.9.4 package. No installation script deploys firmware or changes UEFI entries.
 - `limine-entry-tool`: upstream 1.40.0 entry management and EFI deployment commands. Gradle and GraalVM downloads are pinned and checked; binary builds require network access for Maven dependencies.
 - `limine-snapper-sync`: upstream 1.32.1 snapshot/restore integration, imported from kamm3r/omadora-pkg with its checksum manifest and build history. Fedora wrappers and native binaries use upstream's `/usr/lib/limine` paths.
-- `limine-dracut`: Fedora dracut compatibility commands and kernel-install plugins extracted from Omadora. This is our package name; it is not Arch's mkinitcpio hook package.
+- `limine-dracut` 0.2.0: Fedora dracut compatibility commands, UKI generation and kernel-install plugins. RPM transaction file triggers replace upstream ALPM triggers for boot-image refresh and EFI deployment. Fedora versioned kernels retain recovery entries while preferring the newest installed version. This is our package name; it is not Arch's mkinitcpio hook package.
 
 Omadora-specific boot-menu defaults, branding, hardware quirks, and Snapper/dracut policy remain in Omadora. The generic integration pins kernel-install to Fedora's `/boot` layout and delegates nonmatching layouts to Fedora's dracut plugin.
 
@@ -26,7 +26,7 @@ Do not switch all packages blindly: existing source-installed `/usr/local/bin/li
 
 The existing `/etc/kernel/install.d/96-limine.install` also overrides the packaged `/usr/lib/kernel/install.d/96-limine.install`; retire the old override explicitly after comparison. Review `.rpmnew` files for `/etc/kernel/install.conf` and `/etc/kernel/install.d/50-dracut.install`. Configuration uses `%config(noreplace)`.
 
-Installing these packages does not migrate `/usr/local` files, enable the Snapper service, regenerate initramfs images, or deploy EFI binaries. Those are explicit migration steps after package and configuration review. Keep your current working bootloader until validation completes.
+Installing these packages does not migrate `/usr/local` files or enable the Snapper service. With `limine-dracut` 0.2.0 and an existing `/etc/default/limine` on a UEFI system, RPM file triggers regenerate configured images and deploy Limine. Review the configuration, ensure sufficient ESP space, and back up boot files before upgrading from the split-image-only 0.1.0 integration. The package requires Fedora's `systemd-boot-unsigned` stub for UKIs. Keep your current working bootloader until validation completes.
 
 ## Source provenance
 
