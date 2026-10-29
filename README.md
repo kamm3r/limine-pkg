@@ -32,4 +32,4 @@ Installing these packages does not migrate `/usr/local` files, enable the Snappe
 
 The initial Snapper recipe is from kamm3r/omadora-pkg at `e53038407a3df63ff53ad9429eb5885ab9542e49`. Fedora helper scripts are from kamm3r/omadora (`install/fedora/`) at `becc224a03f1b974aeee61b05e4d34c8cfb21f57`, under the included MIT license, with absolute entry-tool paths updated to `/usr/bin` for RPM installation. Upstream projects retain their own licenses.
 
-The October 28 bootloader update passed local RPM build and version checks. COPR build [11220306](https://copr.fedorainfracloud.org/coprs/build/11220306) has a builder success marker but is awaiting final COPR publication status. Companion packages remain unchanged.
+The October 28 bootloader update passed local RPM build and version checks. COPR build [11220306](https://copr.fedorainfracloud.org/coprs/build/11220306) succeeded and version 12.9.6-1.fc44 is present in repository metadata. Companion packages remain unchanged.
