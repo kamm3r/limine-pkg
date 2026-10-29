@@ -9,7 +9,7 @@ srpm:
 	command -v git >/dev/null || dnf -y install git; \
 	spec='$(spec)'; \
 	case "$$spec" in \
-	  packages/limine-dracut/limine-dracut.spec) \
+	  packages/limine-dracut/limine-dracut.spec | */packages/limine-dracut/limine-dracut.spec) \
 	    command -v rpmbuild >/dev/null || dnf -y install rpm-build; \
 	    mkdir -p '$(outdir)'; \
 	    tar -czf '$(outdir)/limine-dracut-0.2.0.tar.gz' --transform='s,^,limine-dracut-0.2.0/,' -C packages/limine-dracut/helpers .; \
