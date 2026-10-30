@@ -1,0 +1,135 @@
+{
+  "checked_at": "2026-10-30T05:11:44.940168+00:00",
+  "creator_sources": {
+    "limine": {
+      "url": "https://github.com/Limine-Bootloader/Limine",
+      "release_url": "https://github.com/Limine-Bootloader/Limine/releases/tag/v12.9.6",
+      "latest_stable_tag": "v12.9.6",
+      "stable_commit": "89a9512c623a4779cc73e3869383876d54264b28"
+    },
+    "limine-entry-tool": {
+      "url": "https://gitlab.com/Zesko/limine-entry-tool.git",
+      "head": "6a0ca6ea0fd5cd8ecc8afb6ba8444f6f78214a8e",
+      "latest_stable_tag": "1.40.0",
+      "stable_commit": "35dab4b732861f5e8d307a1a7873856a877913aa"
+    },
+    "limine-snapper-sync": {
+      "url": "https://gitlab.com/Zesko/limine-snapper-sync.git",
+      "head": "b4c0da2d4532a993809219f9e5d51a1fa85fcb93",
+      "latest_stable_tag": "1.32.1",
+      "stable_commit": "b4c0da2d4532a993809219f9e5d51a1fa85fcb93"
+    }
+  },
+  "publication_artifacts": {
+    "limine": {
+      "version_release": "12.9.6-1.fc44",
+      "location": "https://download.copr.fedorainfracloud.org/results/kammer/limine/fedora-44-x86_64/Packages/l/limine-12.9.6-1.fc44.x86_64.rpm",
+      "metadata_size": 926078,
+      "sha256": "8c223ea0b44c6de3541ce3a676ba9eb96c1779e4f61306dc48a66270cd87bfe4",
+      "in_metadata": true,
+      "http_size": 926078,
+      "size_matches": true
+    },
+    "limine-snapper-sync": {
+      "version_release": "1.32.1-2.fc44",
+      "location": "https://download.copr.fedorainfracloud.org/results/kammer/limine/fedora-44-x86_64/Packages/l/limine-snapper-sync-1.32.1-2.fc44.x86_64.rpm",
+      "metadata_size": 7701190,
+      "sha256": "8fed9e7acc7c53f44a7323385ce04a302a670e69f1cbca67e58acce3e419fecb",
+      "in_metadata": true,
+      "http_size": 7701190,
+      "size_matches": true
+    },
+    "limine-entry-tool": {
+      "version_release": "1.40.0-1.fc44",
+      "location": "https://download.copr.fedorainfracloud.org/results/kammer/limine/fedora-44-x86_64/Packages/l/limine-entry-tool-1.40.0-1.fc44.x86_64.rpm",
+      "metadata_size": 4219333,
+      "sha256": "0347f97946b8704953edbf8dc89b88fb12ad3efff9b09c112f94e77dcca6a8c1",
+      "in_metadata": true,
+      "http_size": 4219333,
+      "size_matches": true
+    },
+    "limine-dracut": {
+      "version_release": "0.2.0-2.fc44",
+      "location": "https://download.copr.fedorainfracloud.org/results/kammer/limine/fedora-44-x86_64/Packages/l/limine-dracut-0.2.0-2.fc44.noarch.rpm",
+      "metadata_size": 12324,
+      "sha256": "71218c0aa12ea839ca61a2fc29ec9d1674adb34c3f6e7e125024d71a216fc594",
+      "in_metadata": true,
+      "http_size": 12324,
+      "size_matches": true
+    }
+  },
+  "successful_builds": {
+    "limine-dracut": {
+      "id": 11227088,
+      "state": "succeeded",
+      "source_package": {
+        "name": "limine-dracut",
+        "url": "https://download.copr.fedorainfracloud.org/results/kammer/limine/srpm-builds/11227088/limine-dracut-0.2.0-2.fc44.src.rpm",
+        "version": "0.2.0-2"
+      },
+      "chroots": [
+        "fedora-44-x86_64"
+      ]
+    },
+    "limine": {
+      "id": 11220306,
+      "state": "succeeded",
+      "source_package": {
+        "name": "limine",
+        "url": "https://download.copr.fedorainfracloud.org/results/kammer/limine/srpm-builds/11220306/limine-12.9.6-1.src.rpm",
+        "version": "12.9.6-1"
+      },
+      "chroots": [
+        "fedora-44-x86_64"
+      ]
+    },
+    "limine-entry-tool": {
+      "id": 11213166,
+      "state": "succeeded",
+      "source_package": {
+        "name": "limine-entry-tool",
+        "url": "https://download.copr.fedorainfracloud.org/results/kammer/limine/srpm-builds/11213166/limine-entry-tool-1.40.0-1.fc44.src.rpm",
+        "version": "1.40.0-1"
+      },
+      "chroots": [
+        "fedora-44-x86_64"
+      ]
+    },
+    "limine-snapper-sync": {
+      "id": 11213162,
+      "state": "succeeded",
+      "source_package": {
+        "name": "limine-snapper-sync",
+        "url": "https://download.copr.fedorainfracloud.org/results/kammer/limine/srpm-builds/11213162/limine-snapper-sync-1.32.1-2.src.rpm",
+        "version": "1.32.1-2"
+      },
+      "chroots": [
+        "fedora-44-x86_64"
+      ]
+    }
+  },
+  "source_checksums": {
+    "limine": {
+      "source_url": "https://github.com/Limine-Bootloader/Limine/releases/download/v12.9.6/limine-binary.tar.gz",
+      "sha256": "b38aabb042b0c0f9f562b7741be3c1204838d7bbacfa78bb411c674bd5b984ee",
+      "matches": true
+    },
+    "limine-entry-tool": {
+      "source_url": "https://gitlab.com/Zesko/limine-entry-tool/-/archive/1.40.0/limine-entry-tool-1.40.0.tar.gz",
+      "sha256": "b5b7c68880b7b5757c628bd29d2790047910f7b2869e724217048174b475bf67",
+      "matches": true
+    },
+    "limine-snapper-sync": {
+      "source_url": "https://gitlab.com/Zesko/limine-snapper-sync/-/archive/1.32.1/limine-snapper-sync-1.32.1.tar.gz",
+      "sha256": "29bcd51503a0168ca836023efb4cdbd63b6ec4578eb69fb959a33dfa48aa844c",
+      "matches": true
+    }
+  },
+  "new_builds_submitted": [],
+  "outcome": "All packaged stable versions and tracked data commits already match their original creators. No version bumps or unchanged rebuilds required. Exact published versions and HTTP Content-Length verified.",
+  "policy": "Follow stable releases for versioned applications and pinned creator HEAD for profile/rule data. Unreleased application commits are recorded but not promoted to stable packages.",
+  "blockers": [],
+  "local_integration": {
+    "limine-dracut": "Fedora-specific helper maintained in this repository; version 0.2.0-2.fc44 is published. No external release to import."
+  }
+}
